@@ -34,9 +34,15 @@ Run a single simulation
 > testOnly computerdatabase.BasicSimulation
 ```
 
-Open the last report
---------------------
+Run simulations sequentially
+-----------------------------------
 
-```bash
-> lastReport
+```sh
+> testOnly *BasicSimulation *AdvancedSimulationStep01
+```
+
+List all tasks
+--------------
+```sh
+> tasks
 ```
