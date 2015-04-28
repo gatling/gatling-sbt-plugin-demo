@@ -20,13 +20,6 @@ $ cd gatling-sbt-plugin-demo
 $ sbt
 ```
 
-Compile the simulations
------------------------
-
-```bash
-> compile
-```
-
 Run all simulations
 -------------------
 
