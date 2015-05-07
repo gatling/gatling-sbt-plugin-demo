@@ -9,22 +9,13 @@ Get the project
 ---------------
 
 ```bash
-git clone https://github.com/gatling/gatling-sbt-plugin-demo.git
+git clone https://github.com/gatling/gatling-sbt-plugin-demo.git && cd gatling-sbt-plugin-demo
 ```
 
 Start SBT
 ---------
-
 ```bash
-$ cd gatling-sbt-plugin-demo
 $ sbt
-```
-
-Compile the simulations
------------------------
-
-```bash
-> compile
 ```
 
 Run all simulations
@@ -41,9 +32,9 @@ Run a single simulation
 > testOnly computerdatabase.BasicSimulation
 ```
 
-Open the last report
+List all tasks
 --------------------
 
 ```bash
-> lastReport
+> tasks
 ```
