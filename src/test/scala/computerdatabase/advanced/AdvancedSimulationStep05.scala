@@ -18,7 +18,7 @@ class AdvancedSimulationStep05 extends Simulation {
       .exec(http("Search")
         .get("/computers")
         .queryParam("""f""", "${searchCriterion}")
-        .check(regex("""<a href="([^"]+)">${searchComputerName}</a>""").saveAs("computerURL")))
+        .check(css("a:contains('${searchComputerName}')", "href").saveAs("computerURL")))
       .pause(1)
       .exec(http("Select")
         .get("${computerURL}")
