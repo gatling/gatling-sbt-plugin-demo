@@ -12,7 +12,6 @@ class ComputerWorld extends Simulation {
     .acceptHeader("""text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8""")
     .acceptEncodingHeader("""gzip, deflate""")
     .acceptLanguageHeader("""en-gb,en;q=0.5""")
-    .contentTypeHeader("application/x-www-form-urlencoded")
     .userAgentHeader("""Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:31.0) Gecko/20100101 Firefox/31.0""")
 
   val computerDbScn = scenario("Computer Scenario") 
