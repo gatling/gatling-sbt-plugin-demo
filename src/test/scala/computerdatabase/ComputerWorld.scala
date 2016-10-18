@@ -1,3 +1,5 @@
+package computerdatabase
+
 import scala.concurrent.duration._
 
 import java.util.concurrent.ThreadLocalRandom
