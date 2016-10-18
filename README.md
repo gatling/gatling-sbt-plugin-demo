@@ -36,5 +36,5 @@ List all tasks
 --------------------
 
 ```bash
-> gatling:tasks
+> tasks gatling -v
 ```
