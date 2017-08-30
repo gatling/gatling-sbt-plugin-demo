@@ -3,7 +3,7 @@ Gatling's SBT plugin demo
 
 A simple project showing how to configure and use Gatling's SBT plugin to run Gatling simulations. 
 
-This project uses SBT 0.13.15, which is available [here](http://www.scala-sbt.org/download.html) or through [Paul Phillips's sbt-extras script](https://github.com/paulp/sbt-extras).
+This project uses SBT 0.13.16, which is available [here](http://www.scala-sbt.org/download.html) or through [Paul Phillips's sbt-extras script](https://github.com/paulp/sbt-extras).
 
 Get the project
 ---------------
