@@ -6,7 +6,7 @@ import scala.concurrent.duration._
 
 class BasicItSimulation extends Simulation {
 
-  val httpConf = http
+  val httpProtocol = http
     .baseUrl("http://computer-database.gatling.io") // Here is the root for all relative URLs
     .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8") // Here are the common headers
     .acceptEncodingHeader("gzip, deflate")
@@ -18,5 +18,5 @@ class BasicItSimulation extends Simulation {
       .get("/"))
     .pause(7) // Note that Gatling has recorder real time pauses
 
-  setUp(scn.inject(atOnceUsers(1)).protocols(httpConf))
+  setUp(scn.inject(atOnceUsers(1)).protocols(httpProtocol))
 }
