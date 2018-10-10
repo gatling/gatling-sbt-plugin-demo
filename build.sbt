@@ -6,5 +6,5 @@ scalacOptions := Seq(
   "-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation",
   "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
 
-libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % "3.0.0-RC3" % "test,it"
-libraryDependencies += "io.gatling"            % "gatling-test-framework"    % "3.0.0-RC3" % "test,it"
+libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % "3.0.0-RC4" % "test,it"
+libraryDependencies += "io.gatling"            % "gatling-test-framework"    % "3.0.0-RC4" % "test,it"
