@@ -1,0 +1,11 @@
+language: scala
+
+jdk:
+  - openjdk11
+
+jobs:
+  include:
+    - stage: Tests
+      name: Tests
+      script:
+        - sbt 'gatling:testOnly computerdatabase.NonexistentSimulation'
