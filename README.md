@@ -22,17 +22,17 @@ Run all simulations
 -------------------
 
 ```bash
-> gatling:test
+> Gatling / test
 ```
 
 Run a single simulation
 -----------------------
 
 ```bash
-> gatling:testOnly computerdatabase.BasicSimulation
+> Gatling / testOnly computerdatabase.BasicSimulation
 ```
 
-List all tasks
+List all extra tasks
 --------------------
 
 ```bash
