@@ -1,40 +1,17 @@
-Gatling's SBT plugin demo
-=========================
+Gatling plugin for SBT - Scala demo project
+===========================================
 
-A simple project showing how to configure and use Gatling's SBT plugin to run Gatling simulations. 
+A simple showcase of an SBT project using the Gatling plugin for SBT. Refer to the plugin documentation
+[on the Gatling website](https://gatling.io/docs/current/extensions/sbt_plugin/) for usage.
 
-This project uses SBT 1, which is available [here](https://www.scala-sbt.org/download.html).
+This project is written in Scala. For other languages, consider using
+[our other supported build plugins](https://gatling.io/docs/gatling/reference/current/extensions/).
 
-Get the project
----------------
+It includes:
 
-```bash
-git clone https://github.com/gatling/gatling-sbt-plugin-demo.git && cd gatling-sbt-plugin-demo
-```
-
-Start SBT
----------
-```bash
-$ sbt
-```
-
-Run all simulations
--------------------
-
-```bash
-> Gatling / test
-```
-
-Run a single simulation
------------------------
-
-```bash
-> Gatling / testOnly computerdatabase.BasicSimulation
-```
-
-List all extra tasks
---------------------
-
-```bash
-> tasks -v gatling
-```
+* minimal `build.sbt`, requiring [SBT 1](https://www.scala-sbt.org/download.html)
+* latest version of the `io.gatling:gatling-sbt` plugin applied
+* sample [Simulation](https://gatling.io/docs/gatling/reference/current/general/concepts/#simulation) class,
+  demonstrating sufficient Gatling functionality
+* proper source file layout
+  * both the `test` and `it` (integration test) configurations are shown
