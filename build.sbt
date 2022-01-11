@@ -9,3 +9,6 @@ scalacOptions := Seq(
 val gatlingVersion = "3.7.3"
 libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test,it"
 libraryDependencies += "io.gatling"            % "gatling-test-framework"    % gatlingVersion % "test,it"
+
+// Enterprise Cloud (https://cloud.gatling.io/) configuration reference: https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/#working-with-gatling-enterprise-cloud
+// Enterprise Self-Hosted configuration reference: https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/#working-with-gatling-enterprise-self-hosted
