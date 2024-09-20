@@ -8,8 +8,8 @@ import java.util.concurrent.ThreadLocalRandom
 /**
  * This sample is based on our official tutorials:
  *
- *   - [[https://gatling.io/docs/gatling/tutorials/quickstart Gatling quickstart tutorial]]
- *   - [[https://gatling.io/docs/gatling/tutorials/advanced Gatling advanced tutorial]]
+ *   - [[https://docs.gatling.io/tutorials/recorder/ Gatling quickstart tutorial]]
+ *   - [[https://docs.gatling.io/tutorials/advanced/ Gatling advanced tutorial]]
  */
 class ComputerDatabaseSimulation extends Simulation {
 
