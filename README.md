@@ -5,7 +5,7 @@ A simple showcase of an SBT project using the Gatling plugin for SBT. Refer to t
 [on the Gatling website](https://docs.gatling.io/reference/integrations/build-tools/sbt-plugin/) for usage.
 
 This project is written in Scala. For other languages, consider using
-[our other supported build plugins](https://docs.gatling.io/reference/extensions/).
+[our other supported build plugins](https://docs.gatling.io/reference/integrations/build-tools/).
 
 It includes:
 
