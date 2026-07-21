@@ -14,4 +14,3 @@ It includes:
 * sample [Simulation](https://docs.gatling.io/reference/glossary/#simulation) class,
   demonstrating sufficient Gatling functionality
 * proper source file layout
-  * both the `test` and `it` (integration test) configurations are shown

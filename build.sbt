@@ -10,8 +10,8 @@ lazy val gatlingSbtPluginDemo = rootProject
       "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps"),
 
     libraryDependencies ++= Seq(
-      "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test,it",
-      "io.gatling"            % "gatling-test-framework"    % gatlingVersion % "test,it")
+      "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test",
+      "io.gatling"            % "gatling-test-framework"    % gatlingVersion % "test")
   )
 
 // Enterprise Cloud (https://cloud.gatling.io/) configuration reference: https://docs.gatling.io/reference/integrations/build-tools/sbt-plugin/#running-your-simulations-on-gatling-enterprise-cloud
