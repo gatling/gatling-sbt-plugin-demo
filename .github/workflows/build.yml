@@ -1,0 +1,42 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      JAVA_OPTS: "-Xmx6G"
+      SBT_OPTS: "-Dsbt.ci=true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'zulu'
+          java-version: '25'
+
+      - name: Setup sbt
+        uses: sbt/setup-sbt@v1
+
+      - name: Build Scala sbt
+        run: |
+          sbt Test/compile

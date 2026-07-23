@@ -1,0 +1,40 @@
+name: Auto Merge
+
+on:
+  workflow_run:
+    workflows:
+      - build
+    types:
+      - completed
+
+concurrency:
+  group: auto-merge
+  queue: max
+  cancel-in-progress: false  # queue concurrent runs instead of cancelling them
+
+jobs:
+  auto-merge:
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.actor.login == 'scala-steward-gatling[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge pull request
+        env:
+          GH_TOKEN: ${{ secrets.GATLING_CI_TOKEN }}
+        run: |
+          PR_NUMBER=$(gh api \
+            "repos/${{ github.repository }}/pulls" \
+            --jq "[.[] | select(.head.sha == \"${{ github.event.workflow_run.head_sha }}\") | .number] | first")
+
+          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
+            echo "No open PR found for commit ${{ github.event.workflow_run.head_sha }}"
+            exit 0
+          fi
+
+          echo "Auto-merging PR #$PR_NUMBER"
+          gh pr merge "$PR_NUMBER" \
+            --repo "${{ github.repository }}" \
+            --rebase \
+            --delete-branch
