@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    commit-message:
+      prefix: "chore"
+    schedule:
+      interval: "weekly"
+      day: "monday" # explicit, even tough it's the weekly default
+      time: "07:00" # UTC
