@@ -8,3 +8,5 @@ updates:
       interval: "weekly"
       day: "monday" # explicit, even tough it's the weekly default
       time: "07:00" # UTC
+    cooldown:
+      default-days: 7
