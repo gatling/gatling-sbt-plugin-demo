@@ -35,7 +35,7 @@ jobs:
           java-version: '25'
 
       - name: Setup sbt
-        uses: sbt/setup-sbt@f6db8ab474efba716fc7f04441ab33714e4825af # v1.5.4
+        uses: sbt/setup-sbt@c7d2d6258b4bd0d3ec5129e6b3453199d3c79729 # v1.5.8
 
       - name: Build Scala sbt
         run: |
