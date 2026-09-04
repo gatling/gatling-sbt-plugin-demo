@@ -12,6 +12,8 @@ concurrency:
   queue: max
   cancel-in-progress: false  # queue concurrent runs instead of cancelling them
 
+permissions: {}
+
 jobs:
   auto-merge:
     if: >
@@ -26,18 +28,20 @@ jobs:
       - name: Merge pull request
         env:
           GH_TOKEN: ${{ secrets.GATLING_CI_TOKEN }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           PR_NUMBER=$(gh api \
-            "repos/${{ github.repository }}/pulls" \
-            --jq "[.[] | select(.head.sha == \"${{ github.event.workflow_run.head_sha }}\") | .number] | first")
+            "repos/${REPOSITORY}/pulls" \
+            --jq "[.[] | select(.head.sha == \"${HEAD_SHA}\") | .number] | first")
 
           if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
-            echo "No open PR found for commit ${{ github.event.workflow_run.head_sha }}"
+            echo "No open PR found for commit ${HEAD_SHA}"
             exit 0
           fi
 
           echo "Auto-merging PR #$PR_NUMBER"
           gh pr merge "$PR_NUMBER" \
-            --repo "${{ github.repository }}" \
+            --repo "${REPOSITORY}" \
             --rebase \
             --delete-branch
