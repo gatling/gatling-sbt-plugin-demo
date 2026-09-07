@@ -4,7 +4,7 @@ lazy val gatlingSbtPluginDemo = rootProject
   .enablePlugins(GatlingPlugin)
   .settings(
     name := "gatling-sbt-plugin-demo",
-    scalaVersion := "2.13.18",
+    scalaVersion := "3.9.0",
     scalacOptions := Seq(
       "-encoding", "UTF-8", "-release:8", "-deprecation",
       "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps"),
